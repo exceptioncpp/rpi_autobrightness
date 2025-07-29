@@ -1,0 +1,16 @@
+[Unit]
+Description=Автояркость HDMI по BH1750
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/rpi_autobrightness
+ExecStart=/home/pi/rpi_autobrightness/autobrightness-venv/bin/python autobrightness.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

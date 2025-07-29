@@ -1,0 +1,14 @@
+[Unit]
+Description=Auto-restart autobrightness.service on script change
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/rpi_autobrightness
+ExecStart=/home/pi/rpi_autobrightness/watch-autobrightness.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
