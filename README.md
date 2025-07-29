@@ -29,7 +29,7 @@
 ## 🚀 Установка
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/exceptioncpp/rpi_autobrightness/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/exceptioncpp/rpi_autobrightness/main/install.sh | sudo bash
 ```
 
 Скрипт автоматически:

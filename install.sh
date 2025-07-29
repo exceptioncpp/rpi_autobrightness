@@ -2,9 +2,10 @@
 set -e
 
 # Если скрипт запущен без root — повторный запуск через sudo
-if [[ $EUID -ne 0 ]]; then
-  echo "Нет прав root. Повторный запуск через sudo..."
-  exec sudo bash "$0" "$@"
+if [ "$EUID" -ne 0 ]; then
+  echo "Пожалуйста, запустите скрипт через sudo:"
+  echo "  curl -sSL https://raw.githubusercontent.com/exceptioncpp/rpi_autobrightness/main/install.sh | sudo bash"
+  exit 1
 fi
 
 USER_HOME="/home/${SUDO_USER:-$USER}"
